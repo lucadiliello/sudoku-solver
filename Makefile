@@ -1,16 +1,30 @@
-CC=g++
+CC := g++
 
-# CFLAGS will be the options passed to the compiler.
-CFLAGS= -c -Wall
+SRC_DIR := src
+OBJ_DIR := obj
+BIN_DIR := bin
 
-all:
-	$(CC) main.o read_csv.o -o build/prog
+EXE := $(BIN_DIR)/sudoku_solver
+SRC := $(wildcard $(SRC_DIR)/*.cc)
+OBJ := $(patsubst $(SRC_DIR)/%.cc,$(OBJ_DIR)/%.o,$(SRC))
 
-main.o: main.cc
-	$(CC) $(CFLAGS) main.cc
+CPPFLAGS := -Iinclude
+CFLAGS   := -Wall
+LDFLAGS  := -Llib
+LDLIBS   := -lm
 
-read_csv.o: read_csv.cc
-	$(CC) $(CFLAGS) read_csv.cc
+.PHONY: all clean
+
+all: $(EXE)
+
+$(EXE): $(OBJ)
+	$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc | $(OBJ_DIR)
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir $@
 
 clean:
-	rm -rf build/*
+	$(RM) $(OBJ) $(EXE)

@@ -1,6 +1,9 @@
 # Visual Studio
 .vscode/
 
+# Generate executable should be ignored
+bin/*
+
 # Prerequisites
 *.d
 
