@@ -1,9 +1,20 @@
 # sudoku-solver
 Efficient sudoku solver in C++
 
-Usage
+## Usage
+### Build the project with `make`
+```bash
+make all
+```
+
+### Execute with
 ```bash
 ./bin/sudoku_solver <sudoku-file>
+```
+
+### Clean build files and binaries with
+```bash
+make clean
 ```
 
 with `<sudoku-file>` being a CSV file like `sudoku.csv`:
