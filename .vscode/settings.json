@@ -2,6 +2,8 @@
     "files.associations": {
         "sstream": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp",
+        "new": "cpp"
     }
 }

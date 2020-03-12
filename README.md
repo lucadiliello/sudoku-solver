@@ -3,10 +3,10 @@ Efficient sudoku solver in C++
 
 Usage
 ```bash
-./solve sudoku.csv
+./bin/sudoku_solver <sudoku-file>
 ```
 
-with `sudoku.csv` being a file like
+with `<sudoku-file>` being a CSV file like `sudoku.csv`:
 ```
 X,X,5,3,X,X,X,X,X
 8,X,X,X,5,X,X,2,X
