@@ -1,6 +1,6 @@
 #ifndef MODULO_SOLVER_H
 #define MODULO_SOLVER_H
 
-void solve(int ** matrix);
+void solve(sudoku matrix);
 
 #endif
